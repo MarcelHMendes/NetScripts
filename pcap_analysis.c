@@ -115,6 +115,6 @@ void decode_ip(const u_char *header_start){
     printf("\n(( Layer 3 ::: IP Header ))\n");
     printf("(Source: %s\t", (char *) inet_ntoa( ip_header->ip_src_addr));
     printf("Dest: %s)\n", (char *) inet_ntoa(ip_header->ip_dest_addr));
-    printf("(Type: %u\t Version: %d)\n", (u_int) ip_header->ip_type, (u_int8_t) ip_header->ip_version);
-    printf("(IP ID: %d\t TOS: %d)", ip_header->ip_id, (int) ip_header->ip_tos);
+    printf("(Type: %u\t HDL: %d)\n", (u_int) ip_header->ip_type, (u_int8_t) ip_header->ip_hdr_len * 4);
+    printf("(IP ID: %d\t Version: %d)", ip_header->ip_id, (u_int8_t) ip_header->ip_version);
 }
