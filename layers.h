@@ -22,19 +22,6 @@ struct ip_hdr{
     struct in_addr ip_dest_addr; // Destination IP 
 };
 
-struct ipv6_hdr{
-    union{
-        struct ipv6_hdrctl{
-            uint32_t ip6_un1_flow;
-            uint16_t ip6_un1_plen;
-            uint8_t ip6_un1_nxt;
-            uint8_t ip6_un1_hlim;
-        }
-    } ip6_un1;
-    struct in6_addr ip6_scr;
-    struct in6_addr ip6_dst;
-};
-
 struct tcp_hdr{
     unsigned short tcp_src_port;
     unsigned short tcp_dest_port;
@@ -43,13 +30,20 @@ struct tcp_hdr{
     unsigned char reserved:4; // 4 bits from the 6 bits of reserved space
     unsigned char tcp_offset:4; //TCP data offset for little-endian host
     unsigned char tcp_flags; //TCP flags (and two bits of reserved space)
-#define TCP_FYN 0x01;
-#define TCP_SYN 0x02;
-#define TCP_RST 0x04;
-#define TCP_PUSH 0x08;
-#define TCP_ACK 0x10;
-#define TCP_URG 0x20;
+#define TCP_FYN 0x01
+#define TCP_SYN 0x02
+#define TCP_RST 0x04
+#define TCP_PUSH 0x08
+#define TCP_ACK 0x10
+#define TCP_URG 0x20
     unsigned short tcp_window;
     unsigned short tcp_checksum;
     unsigned short tcp_urgent;    
+};
+
+struct udp_hdr{
+    unsigned short udp_src_port;
+    unsigned short udp_dest_port;
+    unsigned short udp_len;
+    unsigned short udp_sum;
 };
