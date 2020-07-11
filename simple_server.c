@@ -49,7 +49,7 @@ int main(void){
         exit(1);
     }
 
-    while(1){   //Accept loop
+    while(1){ //Accept loop
         sin_size = sizeof(struct sockaddr_in);
         new_sockfd = accept(sockfd, (struct sockaddr *) &client_addr, &sin_size);
         if (new_sockfd == -1)
