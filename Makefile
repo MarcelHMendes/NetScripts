@@ -1,4 +1,4 @@
-CC=gcc-8
+CC=gcc
 CCFLAGS=-Wall
 LDFLAGS=-lpcap
 SOURCES=$(wildcard *.c)
