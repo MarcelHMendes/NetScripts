@@ -5,10 +5,10 @@
 
 #define PACKETS 32
 
-void pcap_fatal(const char *failed_in, const char *errbuf){
-    printf("Fatal error in %s: %s\n", failed_in, errbuf);
-    exit(1);
-}
+//void pcap_fatal(const char *failed_in, const char *errbuf){
+//    printf("Fatal error in %s: %s\n", failed_in, errbuf);
+//    exit(1);
+//}
 
 int main(int argc, char *argv[]){
     char choice;
