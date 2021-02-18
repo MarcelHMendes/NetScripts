@@ -57,11 +57,6 @@ void *send_file(void *){
 int main(){
 	
 	int count = 0;
-	int port = 9000;
-	
-	sockaddr_in servAddr;
-	SOCKET connfd;
-	WSADATA wsaData;
 	ofstream out;
 	
 	//std::thread thread(send_file);
