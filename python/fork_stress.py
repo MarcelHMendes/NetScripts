@@ -12,7 +12,7 @@ def work(thread_num, pid, delay):
 def main():
 
     if len(sys.argv) != 4:
-        print("usage : fork-stress.py <n_forks> <n_threads> <delay_sleep>")
+        print("usage : fork_stress.py <n_forks> <n_threads> <delay_sleep>")
         sys.exit(0)
     n_forks = int(sys.argv[1]) - 1
     n_threads = int(sys.argv[2])
