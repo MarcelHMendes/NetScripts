@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  victim:
+    image: nginx:alpine
+    volumes:
+      - ./victim/index.html:/usr/share/nginx/html/index.html
+    ports:
+      - "8080:80"
+
+  attacker:
+    build:
+      context: ./attacker
+    depends_on:
+      - victim
+    environment:
+      - VICTIM_URL=http://victim:80/
