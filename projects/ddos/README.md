@@ -64,7 +64,7 @@ Learning about DDoS (Distributed Denial of Service) attacks is valuable for unde
       3. Optionally, try setting up simulations in a controlled lab environment (for SYN and UDP floods) to better understand how each type affects a server.
    - **Tools**: Online resources, lab environment for simulations.
 
-### Bonus. **Use Anycast Routing to Distribute and Mitigate DDoS Traffic**
+### Bonus challenge. **Use Anycast Routing to Distribute and Mitigate DDoS Traffic**
    - **Objective**: Learn how Anycast routing can help distribute traffic across multiple servers, limiting the impact of DDoS attacks by reducing load on any single server.
    - **Steps**:
       1. **Set Up Multiple Servers**: Deploy instances of your application on servers across different locations (ideally, using multiple regions in a cloud provider).

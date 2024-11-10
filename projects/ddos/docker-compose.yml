@@ -1,17 +1,36 @@
 version: '3.3'
 
 services:
-  victim:
+  web1:
     image: nginx:alpine
     volumes:
-      - ./victim/index.html:/usr/share/nginx/html/index.html
+      - ./web1:/usr/share/nginx/html
+    networks:
+      - webnet
+
+  web2:
+    image: nginx:alpine
+    volumes:
+      - ./web2:/usr/share/nginx/html
+    networks:
+      - webnet
+
+  load_balancer:
+    image: nginx:alpine
+    volumes:
+      - ./nginx-loadbalancer/nginx.conf:/etc/nginx/nginx.conf
     ports:
-      - "8080:80"
+      - "80:80"
+    networks:
+      - webnet
 
   attacker:
     build:
       context: ./attacker
     depends_on:
-      - victim
-    environment:
-      - VICTIM_URL=http://victim:80/
+      - load_balancer
+    networks:
+      - webnet
+
+networks:
+  webnet:
