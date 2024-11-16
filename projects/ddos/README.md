@@ -1,4 +1,4 @@
-Learning about DDoS (Distributed Denial of Service) attacks is valuable for understanding network resilience, but it’s essential to approach this ethically. Testing or simulating DDoS attacks should only be done in controlled, legal environments where you have permission, such as your own infrastructure, isolated lab setups, or cloud environments designed for testing. Here are some project ideas that focus on ethical learning about DDoS concepts and mitigation techniques:
+Learning about DDoS (Distributed Denial of Service) attacks is valuable for understanding network resilience, but it’s essential to approach this ethically. Testing or simulating DDoS attacks should only be done in controlled, legal environments where you have permission, such as your own infrastructure, isolated lab setups, or cloud environments designed for testing. Here are some ideas that focus on ethical learning about DDoS concepts and mitigation techniques:
 
 ### 1. **Set Up a Test Environment for DDoS Simulation**
    - **Objective**: Build a controlled lab environment where you can simulate small-scale DoS (not DDoS) attacks on your own systems.
