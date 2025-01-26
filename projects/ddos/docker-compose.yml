@@ -42,8 +42,23 @@ services:
     container_name: prometheus
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/alert_rules.yml:/etc/prometheus/alert.rules.yml
     ports:
       - "9090:9090"
+    networks:
+      - webnet
+
+  alertmanager:
+    image: prom/alertmanager
+    volumes:
+      - ./prometheus/alertmanager.yml:/etc/alertmanager/alertmanager.yml
+      - ./prometheus/alertmanager-logs:/var/log/alertmanager
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
+      - '--log.level=info'
+      - '--log.format=json'
+    ports:
+      - "9093:9093"
     networks:
       - webnet
 

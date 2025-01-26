@@ -1,0 +1,20 @@
+groups:
+  - name: nginx_alerts
+    rules:
+      - alert: HighResposnseTime
+        expr: avg(rate(http_request_duration_seconds_sum[5m])) > 1
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: High Response Time
+          description: "The average response time is greater than 1 second for more than 1 minutes."
+
+    - alert: HighRequestRate
+          expr: rate(nginx_http_requests_total[1m]) > 1.4
+          for: 10s
+          labels:
+            severity: warning
+          annotations:
+            summary: "Alta Taxa de Requisições HTTP"
+            description: "O Nginx está recebendo mais de 1.4 requisições por segundo."
